@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./attendanceStyle.css">
+    <title>AWC Attendance</title>
+</head>
+<body>
+    <div class="ui">
+        <div class="items">
+            <img src="./AWCLogo.png" alt="AWC Logo Blue">
+            <form id="postForm">
+                <div class ="form-items">
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name"><br>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name"><br>
+                    <input type="email" id="email" name="email" placeholder="Email"><br>
+                    <input type="text" id="attendanceCode" name="attendanceCode" placeholder="Attendance Code"><br>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <p id="response"></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("postForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const name = formData.get("name");
+            const lastName = formData.get("lastName");
+            const email = formData.get("email");
+
+            const apiUrl = "https://awc-3f3032c6c75d.herokuapp.com/post"; // Your API endpoint URL
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ name, lastName, email }),
+                });
+
+                const responseData = await response.json();
+
+                document.getElementById("response").textContent = JSON.stringify(responseData, null, 2);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        });
+    </script>
+</body>
+</html>

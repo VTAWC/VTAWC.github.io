@@ -287,25 +287,27 @@ hr {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: var(--color5);
+    background-color: var(--color2);
     border-radius: 30px;
     padding: 15px;
     max-width: 375px;
 }
 
 .info {
-    background-color: var(--color5);
+    background-color: var(--color2);
 }
 
 .info>p {
     font-size: 14pt;
     padding: 15px;
-    background-color: var(--color5);
+    background-color: var(--color2);
+    color: var(--color5);
 }
 
 .info>p>b {
     font-size: 18pt;
-    background-color: var(--color5);
+    background-color: var(--color2);
+    color: var(--color5)
 }
 
 .card>img {
@@ -396,4 +398,30 @@ hr {
     #home {
         grid-template-columns: 1fr;
     }
+}
+
+.question {
+    background-color: var(--color2);
+    color: var(--color1);
+    cursor: pointer;
+    padding: 18px;
+    margin: 5px;
+    width: 90%;
+    text-align: center;
+    font-size: 18pt;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active,
+.question:hover {
+    background-color: var(--color5);
+    color: var(--color2);
+}
+
+.answer {
+    background-color: var(--color1);
+    display: none;
+    overflow: hidden;
 }
