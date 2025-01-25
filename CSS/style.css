@@ -279,18 +279,20 @@ hr {
     .card>img {
         border-radius: 50%;
         height: 100px;
+
     }
 }
 
 .card {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     position: relative;
     background-color: var(--color2);
     border-radius: 30px;
     padding: 15px;
-    max-width: 375px;
+    max-width: 330px;
+    height: 450px;
 }
 
 .info {
@@ -298,16 +300,17 @@ hr {
 }
 
 .info>p {
-    font-size: 14pt;
-    padding: 15px;
+    font-size: 15pt;
+    padding: 0px;
     background-color: var(--color2);
     color: var(--color5);
+    text-align: center;
 }
 
 .info>p>b {
-    font-size: 18pt;
+    font-size: 20pt;
     background-color: var(--color2);
-    color: var(--color5)
+    color: var(--color5);
 }
 
 .card>img {
